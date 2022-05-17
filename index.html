@@ -4,20 +4,101 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>毕业论文</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
-
-		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="dist/theme/white.css">
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+			<div class="font-self"></div>
+			<div class="slides" style="border: 1px solid rgba(156,164,164,0.26); border-radius: 10px;">
+				<style type="text/css">
+					.reveal red{
+						color: red;
+					}
+					.right-picture{
+						height: 300px;
+						float: right;
+						margin: 10px 20px;
+						width: 300px;
+					}
+					.cite{
+						text-align: right;
+					}
+					.stack.present section{
+						height: 100%;
+					    position: relative;
+					}
+					.font-self{
+						display: block;
+						font-size: 32px;
+						font-family:'Lato', 'SimHei','STXihei','Sans Serif';
+						margin: 20px 0px;
+						text-align: left;
+						font-weight: normal;
+						padding: 0px 25px;
+					}
+					#key{
+						color: red;
+					}
+					.title{
+						font-weight: normal;
+						font-size: 60px;
+						font-family:'Lato', 'SimHei','STXihei','Sans Serif';
+						display: block;
+						position: absolute;
+						text-align: center;
+						width: 100%;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+  					.reveal p {
+						font-family:'Lato', 'SimHei','STXihei','Sans Serif';
+						margin: 20px 0px;
+						font-weight: normal;
+						padding: 0px 25px;
+  					}
+  					.reveal ul {
+						margin: 0px 15px 0px 40px;
+    					text-align: left;
+    					display: block;
+  					}
+					.reveal blockquote {
+    					display: block;
+    					position: relative;
+    					width: 90%;
+    					margin: 20px auto;
+    					padding: 5px;
+    					background: rgba(0, 255, 255, 0.05);
+    					border-radius: 10px;
+    					box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+					}
+					.reveal li{
+						font-family:'Lato', 'SimHei','STXihei','Sans Serif';
+						margin: 10px 0px 0px 32px;
+						font-size: 32px;
+					}
+					.reveal h2{
+						border-bottom: 3px solid #256ab9;
+						padding: 0px 25px 5px;
+						font-family:'Lato', 'SimHei','STXihei','Sans Serif';
+						margin: 0px 0px 20px;
+						text-align: left;
+						font-weight: normal;	
+					}
+					.reveal h1{
+						font-weight: normal;
+						font-family:'Lato', 'SimHei','STXihei','Sans Serif';
+						margin: 0px 10px;
+						padding: 0px 25px;
+						text-align: center;
+					}
+				</style>
+				<section data-markdown="paper.md" data-separator-vertical="--">
+				</section>
 			</div>
 		</div>
 
@@ -25,15 +106,15 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
+				center: false,
 				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				markdown: {
+    			smartypants: true
+ 				},
+				plugins: [RevealMath.KaTeX, RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
 	</body>
