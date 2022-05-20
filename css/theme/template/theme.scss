@@ -54,16 +54,15 @@
 	line-height: var(--r-heading-line-height);
 	letter-spacing: var(--r-heading-letter-spacing);
 
-	text-transform: var(--r-heading-text-transform);
 	text-shadow: var(--r-heading-text-shadow);
 
 	word-wrap: break-word;
 }
 
-.reveal h1 {font-size: var(--r-heading1-size); }
-.reveal h2 {font-size: var(--r-heading2-size); }
-.reveal h3 {font-size: var(--r-heading3-size); }
-.reveal h4 {font-size: var(--r-heading4-size); }
+.reveal h1 {font-size: 60px; }
+.reveal h2 {font-size: 48px; }
+.reveal h3 {font-size: 36px; }
+.reveal h4 {font-size: 24px; }
 
 .reveal h1 {
 	text-shadow: var(--r-heading1-text-shadow);
@@ -75,6 +74,8 @@
  *********************************************/
 
 .reveal p {
+	font-size: 32px;
+	text-align: left;
 	margin: var(--r-block-margin) 0;
 	line-height: 1.3;
 }
@@ -226,6 +227,7 @@
 	text-align: center;
 }
 
+
 .reveal table th[align="right"],
 .reveal table td[align="right"] {
 	text-align: right;
@@ -256,9 +258,6 @@
 	vertical-align: top;
 }
 
-.reveal img {
-	margin: var(--r-block-margin) 0;
-}
 
 
 /*********************************************
