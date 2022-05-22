@@ -51,19 +51,19 @@ A transformer is a deep learning model that adopts the mechanism of self-attenti
 ~~变形金刚？变压器？~~ [(新的模型结构)](static\img\transformer_architecture.svg)
 - 拥有编码器解码器的架构
 - 使用<red>自注意力机制</red>作为模型的基础
-- 对序列模型的输入只有长度要求，输出可以是任意长度
+- 对序列模型的输入只有对最大长度有要求，输出可以是任意长度
 --
 ## Transformer模型结构
 <div class="font-self">自注意力模型结构图</div>
 <img src="static\img\dot-attention.svg" class="right-picture">
 <img src="static\img\first-input.gif" width=600px height=300px margin=0px>
 
-- 初始化三个矩阵Q、K、V假设为4*3的矩阵和输入向量1\*4的向量
+- 词嵌入向量1\*4的向量和初始化三个矩阵Q、K、V假设为4*3的矩阵
 - 将输入向量与三个初始化矩阵相乘得到图中对应的三个矩阵输入
 --
 ## Transformer模型结构
 <div class="font-self">通过KQ矩阵相乘得到注意力得分<div>
-<img src="static\img\attention-score.gif" width=600px height=300px margin=0px>
+<img src="static\img\attention-score.gif" width=600px height=400px margin=0px>
 
 $$ Attention(Q,K,V)=Softmax(\tfrac{QK_{}^{T}}{\sqrt{dk}})V $$
 
@@ -71,15 +71,37 @@ $$ Attention(Q,K,V)=Softmax(\tfrac{QK_{}^{T}}{\sqrt{dk}})V $$
 ## Transformer模型结构
 <div class="font-self">多头注意力机制<div>
 
-<img src="static\img\multihead_attention.svg" class="right-picture" width=600px height=300px margin=0px>
+<img src="static\img\multihead_attention.svg" class="right-picture" max-width=100% height=300px margin=0px>
 
 - 将多个自注意力层叠加
 - h代表自注意力头的个数
 - 将h个自注意力层的结果进行综合得出注意力分数
-  
+- [注意力可视化](static\img\transformer_self-attention_visualization.png)
+
 --
 ## Transformer模型结构
-<img src="static\img\transformer_architecture.svg" class="right-picture" id='arch' width=800px height=500px margin=0px>
-<div class="font-self">Transformer结构的特点主要是进行矩阵相乘<div>
+<div class="font-self">Transformer结构的特点主要是依赖于注意力机制<div>
 
-https://weibo.com/ajax/statuses/buildComments?flow=0&is_reload=1&id=4771254505312211&is_show_bulletin=2&is_mix=0&max_id=141058831188462&count=20&uid=1618051664
+- 论文发表之初被用于[自然语言处理任务](https://arxiv.org/pdf/1706.03762.pdf)
+- 相较于循环神经网络有更好的并行性
+- 相较于卷积神经网络拥有更广的视野
+- 现在已经逐渐在图像领域等其他领域开始展现威力
+- [NVIDIA公司的新加速卡H100对Transformer模型进行针对优化](https://blogs.nvidia.com/blog/2022/03/22/h100-transformer-engine/)
+---
+
+<div class='title'>论文选择的BERT模型</div>
+--
+
+## 论文选择的BERT模型介绍
+<div class="font-self">BERT模型的特点<div>
+<div class="font-self">在自然语言处理领域中，预训练语言模型（Pre-trained Language Models）已成为非常重要的基础技术。<div>
+
+- 结构基于Transformer的预训练模型
+- 结构简单可以快速适用于不同的下游任务
+- 只需要准备数据进行微调即可得到结果
+
+
+
+
+
+
